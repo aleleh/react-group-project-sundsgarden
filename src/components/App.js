@@ -1,9 +1,9 @@
 import Home from "./Home";
 import Header from "./Header";
 
-function App(props) {
+function App() {
   return (
-      <div>1999
+      <div>
         <Home/>
         <Header/>
       </div>
