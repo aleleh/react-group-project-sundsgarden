@@ -1,13 +1,12 @@
-import Footer from "./Footer";
+import Home from "./Home";
+import Header from "./Header";
 
-function App() {
+function App(props) {
   return (
-    <div className="App">
-      <h1>Group Project</h1>
-      <div>
-        <Footer/>
+      <div>1999
+        <Home/>
+        <Header/>
       </div>
-    </div>
   );
 }
 
