@@ -1,40 +1,38 @@
-
-
 {
     "users": [
       {
         "id": 1,
-        "first_name": "Walter",
-        "last_name": "White",
-        "email": "walter.white@email.com",
+        "first_name": "Ellen",
+        "last_name": "Suni",
+        "email": "ellen@sundsgarden.se",
         "password": "password"
       },
       {
         "id": 2,
-        "first_name": "Gustavo",
-        "last_name": "Fring",
-        "email": "gustavo.fring@lospolloshermanos.com",
+        "first_name": "Sara",
+        "last_name": "Talal",
+        "email": "sara@sundsgarden.se",
         "password": "password"
       },
       {
         "id": 3,
-        "first_name": "Skyler",
-        "last_name": "White",
-        "email": "skyler.whiten@gmail.com",
+        "first_name": "David",
+        "last_name": "Church",
+        "email": "david@sundsgarden.se",
         "password": "password"
       },
       {
         "id": 4,
-        "first_name": "Saul",
-        "last_name": "Goodman",
-        "email": "saul.goodman@sga.com",
+        "first_name": "William",
+        "last_name": "Lehnbom",
+        "email": "william@sundsgarden.se",
         "password": "password"
       },
       {
         "id": 5,
-        "first_name": "Jesse",
-        "last_name": "Pinkman",
-        "email": "jesse.pinkman@hotmail.com",
+        "first_name": "Alexander",
+        "last_name": "Lehnbom",
+        "email": "alexander@sundsgarden.se",
         "password": "password"
       }
     ]
