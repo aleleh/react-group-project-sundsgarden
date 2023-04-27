@@ -3,6 +3,7 @@ import Home from "./Home";
 import Header from "./Header";
 import Footer from "./Footer";
 import Signup from "./Signup";
+import Login from "./Login";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div>
         <Header />
         <Signup />
+        <Login />
         <Routes>
         <Route path="/" element={<Home />} />
         </Routes>

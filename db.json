@@ -1,40 +1,39 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "first_name": "Ellen",
-        "last_name": "Suni",
-        "email": "ellen@sundsgarden.se",
-        "password": "password"
-      },
-      {
-        "id": 2,
-        "first_name": "Sara",
-        "last_name": "Talal",
-        "email": "sara@sundsgarden.se",
-        "password": "password"
-      },
-      {
-        "id": 3,
-        "first_name": "David",
-        "last_name": "Church",
-        "email": "david@sundsgarden.se",
-        "password": "password"
-      },
-      {
-        "id": 4,
-        "first_name": "William",
-        "last_name": "Lehnbom",
-        "email": "william@sundsgarden.se",
-        "password": "password"
-      },
-      {
-        "id": 5,
-        "first_name": "Alexander",
-        "last_name": "Lehnbom",
-        "email": "alexander@sundsgarden.se",
-        "password": "password"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Ellen",
+      "last_name": "Suni",
+      "email": "ellen@sundsgarden.se",
+      "password": "password"
+    },
+    {
+      "id": 2,
+      "first_name": "Sara",
+      "last_name": "Talal",
+      "email": "sara@sundsgarden.se",
+      "password": "password"
+    },
+    {
+      "id": 3,
+      "first_name": "David",
+      "last_name": "Church",
+      "email": "david@sundsgarden.se",
+      "password": "password"
+    },
+    {
+      "id": 4,
+      "first_name": "William",
+      "last_name": "Lehnbom",
+      "email": "william@sundsgarden.se",
+      "password": "password"
+    },
+    {
+      "id": 5,
+      "first_name": "Alexander",
+      "last_name": "Lehnbom",
+      "email": "alexander@sundsgarden.se",
+      "password": "password"
+    }
+  ]
+}
