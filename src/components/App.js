@@ -4,6 +4,8 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Signup from "./Signup";
 
+import TextInput from "./TextInput";
+
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,7 @@ function App() {
         
         <Footer />
       </div>
+      
     </BrowserRouter>
   );
 }
