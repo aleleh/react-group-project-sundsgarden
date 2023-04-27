@@ -13,8 +13,7 @@ const TextInput = () => {
     return (
         <div>
             <div>
-                <label>Write here</label>
-                <input type="text" name="input" value={input} onChange={handleInput}/>
+                <input type="text" name="input" value={input} onChange={handleInput} placeholder="Write here" autoFocus/>
             </div>
             <h5>{input}</h5>
         </div>

@@ -18,6 +18,7 @@ function App() {
         
         <Footer />
       </div>
+      {/* Transfer to Game.js before merging! */}
       <TextInput/>
     </BrowserRouter>
   );
