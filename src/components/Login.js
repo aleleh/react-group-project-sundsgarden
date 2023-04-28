@@ -6,11 +6,11 @@ function Login() {
     email: "",
     password: ""
   });
-  // Initialize state variables for error message adn suces message
+  // Initialize state variables for error message and success message
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  // handle input field changes by updating the form data state
+  // Handle input field changes by updating the form data state
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 }
@@ -37,7 +37,7 @@ function handleSubmit(e) {
       setSuccessMessage("");
 }
   })
-  // handle errors by displaying error message
+  // Handle errors by displaying error message
   .catch((error) => {
     console.errorr("Error", error);
     setErrorMessage("An error occurred. Please try again.");
@@ -45,7 +45,7 @@ function handleSubmit(e) {
   });
 }
 
-  // Render the login from and display message based on state
+  // Render the login form and display message based on state
   return (
     <div>
       <h2>Login Form</h2>
