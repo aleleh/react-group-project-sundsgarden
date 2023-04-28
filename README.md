@@ -3,6 +3,7 @@ GROUP PROJECT
 PACKAGES NEEDED:
 json-server
 json-server-auth
+react-modal
 
 
 TO USE FAKE JSON SERVER
