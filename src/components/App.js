@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Signup from "./Signup";
 import Login from "./Login";
+import DisplayCode from "./DisplayCode";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Routes>
         <Route path="/" element={<Home />} />
         </Routes>
-        
+        <DisplayCode/>
         <Footer />
       </div>
     </BrowserRouter>
