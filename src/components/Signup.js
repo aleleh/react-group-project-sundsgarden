@@ -1,26 +1,28 @@
 import { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 
 const Signup = () => {
-  const [info, setInfo] = useState({ name: "", email: "", password: "" });
-  const [user, setUser] = useState([]);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setInfo({ ...info, [name]: value });
+  const checkEmail = (users) => {
+    const user = users.find((user) => user.email === email);
+    if (user) return user;
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const newUser = { ...info, id: uuidv4() };
-    setUser([...user, newUser]);
-    setInfo({ name: "", email: "", password: "" });
-  };
+  const handleSubmit = async () => {
+    const user = await axios
+      .get("/users")
+      .then((res) => checkEmail(res.data, email));
 
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
+    if (user) {
+      alert("User already exists!");
+    } else {
+      const user = { name, email, password };
+      axios.post("/users", user).then(alert("User created!"));
+    }
+  };
 
   return (
     <div className="form-container">
@@ -28,13 +30,13 @@ const Signup = () => {
         <h3> Sign Up!</h3>
 
         <label htmlFor="name">Full Name</label>
-        <form id="form" onSubmit={handleSubmit} className="form-layout">
+        <form id="form" className="form-layout">
           <input
             type="text"
             name="name"
-            value={info.name}
+            value={name}
             id="name"
-            onChange={handleChange}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Full Name"
           />
 
@@ -42,9 +44,9 @@ const Signup = () => {
           <input
             type="email"
             name="email"
-            value={info.email}
+            value={email}
             id="email"
-            onChange={handleChange}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Email Address"
           />
 
@@ -52,13 +54,13 @@ const Signup = () => {
           <input
             type="password"
             name="password"
-            value={info.password}
+            value={password}
             id="password"
-            onChange={handleChange}
-            placeholder="***********"
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
           />
 
-          <button type="submit" className="submit-btn">
+          <button type="submit" className="submit-btn" onSubmit={handleSubmit}>
             Sign Up!
           </button>
         </form>
