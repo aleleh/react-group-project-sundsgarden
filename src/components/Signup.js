@@ -11,7 +11,9 @@ const Signup = () => {
     if (user) return user;
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
     const user = await axios
       .get("/users")
       .then((res) => checkEmail(res.data, email));
@@ -30,7 +32,7 @@ const Signup = () => {
         <h3> Sign Up!</h3>
 
         <label htmlFor="name">Full Name</label>
-        <form id="form" className="form-layout">
+        <form id="form" className="form-layout" >
           <input
             type="text"
             name="name"
@@ -63,6 +65,7 @@ const Signup = () => {
           <button type="submit" className="submit-btn" onSubmit={handleSubmit}>
             Sign Up!
           </button>
+
         </form>
       </div>
     </div>
