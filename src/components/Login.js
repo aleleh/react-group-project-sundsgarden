@@ -39,7 +39,7 @@ function handleSubmit(e) {
   })
   // Handle errors by displaying error message
   .catch((error) => {
-    console.errorr("Error", error);
+    console.error("Error", error);
     setErrorMessage("An error occurred. Please try again.");
     setSuccessMessage("");
   });
