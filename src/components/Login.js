@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
+
   // Initialize state variables for form data
   const [formData, setFormData] = useState({
     email: "",
@@ -9,6 +12,7 @@ function Login() {
   // Initialize state variables for error message and success message
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+
 
   // Handle input field changes by updating the form data state
   function handleChange(e) {
@@ -31,6 +35,10 @@ function handleSubmit(e) {
       console.log("User found:", { ...user, password: "[hidden]" });
       setSuccessMessage("User found");
       setErrorMessage("");
+      navigate ("/Game");
+
+      localStorage.setItem("user", JSON.stringify(user.id));
+
     } else {
       // if user not found, display error message
       setErrorMessage("User not found");
@@ -48,7 +56,7 @@ function handleSubmit(e) {
   // Render the login form and display message based on state
   return (
     <div>
-      <h2>Login Form</h2>
+      <h2>Already a user? Log in</h2>
       <form className="login-form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -65,7 +73,7 @@ function handleSubmit(e) {
           onChange={handleChange}
         />
         <button className="login-btn" type="submit">
-          Login
+          Log in
         </button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}

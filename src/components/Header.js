@@ -1,25 +1,33 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Modal from "./Modal";
 
-const Header = () => {
-  // Creates a state variable to track if the modal is open
-  // Sets initial value to false (modal is closed)
-  const [showModal, setShowModal] = useState(false);
-  // Function to close the modal
-  const closeModal = () => setShowModal(false);
-  // Function to open the modal
-  const openModal = () => setShowModal(true);
+const Header = ({ showModal, closeModal }) => {
+  // Get the current location (URL path) and navigate function from the router
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Check if the current route is the "/modal" route
+  const isModalRoute = location.pathname === "/modal";
+
+  // Function to open the modal by navigating to the "/modal" route
+  // if the user is not already on that route
+  const openModal = () => {
+    if (!isModalRoute) {
+      navigate("/modal");
+    }
+  };
 
   return (
     <nav>
       <ul>
         <li>
+          {/* Link to the home page */}
           <Link className="links" to="/">
             Home
           </Link>
         </li>
         <li>
+          {/* Link to the game page */}
           <Link className="links" to="/game">
             Game
           </Link>
