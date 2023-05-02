@@ -13,38 +13,37 @@ function Login() {
   // Handle input field changes by updating the form data state
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  }
+}
 
-  // Handle form submission by sending a request to the server
-  function handleSubmit(e) {
-    e.preventDefault();
-    // Fetch data from the server
-    fetch("http://localhost:5000/users")
-      .then((res) => res.json())
-      .then((data) => {
-        // Check if there is a user with matching email and password
-        const user = data.find(
-          (user) =>
-            user.email === formData.email && user.password === formData.password
-        );
-        // If the user is found, display success message
-        if (user) {
-          console.log("User found:", { ...user, password: "[hidden]" });
-          setSuccessMessage("User found");
-          setErrorMessage("");
-        } else {
-          // If the user is not found display error message
-          setErrorMessage("User not found");
-          setSuccessMessage("");
-        }
-      })
-      // Handle errors by displaying an error message
-      .catch((error) => {
-        console.error("Error:", error);
-        setErrorMessage("An error occurred. Please try again.");
-        setSuccessMessage("");
-      });
-  }
+// Handle form submisson by sending a request to fake json server
+function handleSubmit(e) {
+  e.preventDefault();
+  // Fetch data from the server
+  fetch("http://localhost:5000/users")
+  .then((res) => res.json())
+  .then((data) => {
+    //check if there is a user with matching email and pw
+    const user = data.find(
+      (user) => user.email === formData.email && user.password === formData.password
+    );
+    // if user is found, display success message
+    if (user) {
+      console.log("User found:", { ...user, password: "[hidden]" });
+      setSuccessMessage("User found");
+      setErrorMessage("");
+    } else {
+      // if user not found, display error message
+      setErrorMessage("User not found");
+      setSuccessMessage("");
+}
+  })
+  // Handle errors by displaying error message
+  .catch((error) => {
+    console.error("Error", error);
+    setErrorMessage("An error occurred. Please try again.");
+    setSuccessMessage("");
+  });
+}
 
   // Render the login form and display message based on state
   return (
