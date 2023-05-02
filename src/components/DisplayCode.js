@@ -3,22 +3,21 @@ import { useState } from "react";
 const DisplayCode = () => {
     
     // Code array
-    const codeSnippets = ['zero', 
-    'one', 
-    'two',
-    'three'
+    const codeSnippets = ['const variable = "hello";', 
+        'let number = 45;', 
+        'function Name() {};'
     ];
 
-    let i = 0;
-
-    const [snippet, setSnippet] = useState(codeSnippets[i]);
-
+    const [index, setIndex] = useState(0);
+    const [snippet, setSnippet] = useState("");
+    
 
     const btnClicked = (e) => {
         e.preventDefault();
         console.log("clicked");
-        i++;
-        setSnippet(codeSnippets[i]);
+        
+        setIndex(index + 1);
+        setSnippet(codeSnippets[index]);
     };
 
     
