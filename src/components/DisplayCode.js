@@ -1,30 +1,24 @@
 import { useState } from "react";
 
 const DisplayCode = () => {
+    
     // Code array
-    const codeSnippets = ['const variable = "hello";', 
-    'let number = 45;', 
-    'function Name() {};',
-    'number 4'
+    const codeSnippets = ['zero', 
+    'one', 
+    'two',
+    'three'
     ];
 
-    const [snippet, setSnippet] = useState();
     let i = 0;
-    const [index, setIndex] = useState(i);
 
-    console.log(index);
+    const [snippet, setSnippet] = useState(codeSnippets[i]);
 
-    //const addOne = codeSnippets.map((i) => i++);
 
     const btnClicked = (e) => {
         e.preventDefault();
-        setIndex(i += 1);
-        console.log(index);
-        
-        // setSnippet(codeSnippets[i]);
-        // console.log(addOne);
-        // console.log(i);
-        
+        console.log("clicked");
+        i++;
+        setSnippet(codeSnippets[i]);
     };
 
     
@@ -39,3 +33,20 @@ const DisplayCode = () => {
 };
 
 export default DisplayCode;
+
+
+// 'const variable = "hello";', 
+//     'let number = 45;', 
+//     'function Name() {};'
+
+
+// const Box = ({code}) => {
+//     return <h1>{code}</h1>;
+// };
+
+
+// {snippet.map((s, i) => {
+//     return (
+//         <Box key={i} code={s}/>
+//     )
+// })}

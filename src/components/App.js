@@ -11,8 +11,8 @@ function App() {
     <BrowserRouter>
       <div>
         <Header />
-        <Signup />
-        <Login />
+        {/* <Signup /> */}
+        {/* <Login /> */}
         <Routes>
         <Route path="/" element={<Home />} />
         </Routes>
