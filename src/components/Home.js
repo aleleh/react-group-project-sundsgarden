@@ -1,4 +1,3 @@
-import Game from "./Game";
 import { Link } from "react-router-dom";
 
 const Home = () => {
