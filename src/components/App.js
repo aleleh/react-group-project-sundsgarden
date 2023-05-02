@@ -15,7 +15,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Game" exact element={<Game />} />
         </Routes>
-        <DisplayCode/>
         <Footer />
       </div>
     </BrowserRouter>

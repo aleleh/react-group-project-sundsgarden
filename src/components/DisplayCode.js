@@ -15,9 +15,13 @@ const DisplayCode = () => {
     const btnClicked = (e) => {
         e.preventDefault();
         console.log("clicked");
+        if (index < codeSnippets.length) {
+            setIndex(index + 1);
+            setSnippet(codeSnippets[index]);
+        } else {
+            setSnippet("No more snippets");
+        }
         
-        setIndex(index + 1);
-        setSnippet(codeSnippets[index]);
     };
 
     
@@ -26,26 +30,9 @@ const DisplayCode = () => {
         <div>
             <p>Code to copy:</p>
             <h1>{snippet}</h1>
-            <button onClick={btnClicked}>click</button>
+            <button onClick={btnClicked}>click for code</button>
         </div>
     );
 };
 
 export default DisplayCode;
-
-
-// 'const variable = "hello";', 
-//     'let number = 45;', 
-//     'function Name() {};'
-
-
-// const Box = ({code}) => {
-//     return <h1>{code}</h1>;
-// };
-
-
-// {snippet.map((s, i) => {
-//     return (
-//         <Box key={i} code={s}/>
-//     )
-// })}
