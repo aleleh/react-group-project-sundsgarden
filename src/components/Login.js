@@ -56,7 +56,7 @@ function handleSubmit(e) {
   // Render the login form and display message based on state
   return (
     <div>
-      <h2>Log in</h2>
+      <h2>Already a user? Log in</h2>
       <form className="login-form" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -73,7 +73,7 @@ function handleSubmit(e) {
           onChange={handleChange}
         />
         <button className="login-btn" type="submit">
-          Login
+          Log in
         </button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
