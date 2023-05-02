@@ -1,9 +1,7 @@
-import { Link } from "react-router-dom";
-
 const Home = () => {
   return (
     <div>
-      <Link className="links" to="/Game">Start Game</Link>
+      <p>Log in to play</p>
     </div>
   );
 };
