@@ -20,6 +20,11 @@ const Header = () => {
           </Link>
         </li>
         <li>
+          <Link className="links" to="/game">
+            Game
+          </Link>
+        </li>
+        <li>
           {/* Button to open the modal when clicked */}
           <button onClick={openModal}>Sign up/Log in</button>
         </li>
