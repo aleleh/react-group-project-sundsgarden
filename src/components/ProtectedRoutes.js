@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Modal from "./Modal";
 
-function ProtectedRoutes() {
+function ProtectedRoutes({ showModal, closeModal }) {
   const userId = localStorage.getItem("user");
   const navigate = useNavigate();
 
@@ -12,7 +13,12 @@ function ProtectedRoutes() {
     }
   }, [userId, navigate]);
 
-  return <Outlet />;
+  return (
+    <>
+      <Outlet />
+      {showModal && <Modal closeModal={closeModal} />}
+    </>
+  );
 }
 
 export default ProtectedRoutes;
