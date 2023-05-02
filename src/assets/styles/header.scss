@@ -1,0 +1,15 @@
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    ul {
+        display: flex;
+        flex-direction: row;
+    }
+
+    a {
+        margin: 1em;
+    }
+}
