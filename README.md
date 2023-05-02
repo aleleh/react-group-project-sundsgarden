@@ -4,6 +4,8 @@ PACKAGES NEEDED:
 json-server
 json-server-auth
 react-modal
+axios
+react-router-dom
 
 
 TO USE FAKE JSON SERVER

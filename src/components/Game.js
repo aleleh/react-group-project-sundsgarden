@@ -1,8 +1,10 @@
 const Game = () => {
-    return 
-    <div>
+    return (
+      <div>
         <h1>GAME</h1>
-    </div>;
+      </div>
+    );
   };
   
   export default Game;
+  
