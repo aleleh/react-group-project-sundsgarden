@@ -2,6 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header";
 import Footer from "./Footer";
+import Signup from "./Signup";
+import Login from "./Login";
+import Game from "./Game";
 
 function App() {
   return (
@@ -10,6 +13,7 @@ function App() {
         <Header />
         <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Game" element={<Game />} />
         </Routes>
         
         <Footer />
