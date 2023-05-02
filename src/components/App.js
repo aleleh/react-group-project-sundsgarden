@@ -3,6 +3,8 @@ import Home from "./Home";
 import Header from "./Header";
 import Footer from "./Footer";
 import Signup from "./Signup";
+import Login from "./Login";
+import Game from "./Game";
 
 import TextInput from "./TextInput";
 
@@ -11,9 +13,9 @@ function App() {
     <BrowserRouter>
       <div>
         <Header />
-        <Signup />
         <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Game" exact element={<Game />} />
         </Routes>
         
         <Footer />
