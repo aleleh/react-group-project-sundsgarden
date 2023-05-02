@@ -40,6 +40,12 @@
       "email": "Dave.church721@gmail.com",
       "password": "sasdasdas",
       "id": 6
+    },
+    {
+      "name": "test",
+      "email": "test@test.se",
+      "password": "test",
+      "id": 7
     }
   ]
 }

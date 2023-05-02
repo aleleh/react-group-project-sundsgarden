@@ -2,9 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import Header from "./Header";
 import Footer from "./Footer";
-import Signup from "./Signup";
-import Login from "./Login";
 import Game from "./Game";
+import ProtectedRoutes from "./ProtectedRoutes";
+import Modal from "./Modal";
 
 function App() {
   return (
@@ -13,9 +13,11 @@ function App() {
         <Header />
         <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Game" exact element={<Game />} />
+        <Route path="/Modal" element={<Modal />} />
+        <Route path="/" element={<ProtectedRoutes />}>
+          <Route path="/Game" element={<Game />} />
+        </Route>
         </Routes>
-        
         <Footer />
       </div>
     </BrowserRouter>
