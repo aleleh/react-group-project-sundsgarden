@@ -6,7 +6,6 @@ import Signup from "./Signup";
 import Login from "./Login";
 import Game from "./Game";
 
-import TextInput from "./TextInput";
 
 function App() {
   return (
@@ -20,8 +19,6 @@ function App() {
         
         <Footer />
       </div>
-      {/* Transfer to Game.js before merging! */}
-      <TextInput/>
     </BrowserRouter>
   );
 }
