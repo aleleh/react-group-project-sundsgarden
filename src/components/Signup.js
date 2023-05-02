@@ -60,7 +60,6 @@ const Signup = () => {
             placeholder="Full Name"
           />
 
-          <label htmlFor="email">Email Address</label>
           <input
             type="email"
             name="email"
@@ -70,7 +69,6 @@ const Signup = () => {
             placeholder="Email Address"
           />
 
-          <label htmlFor="password">Password</label>
           <input
             type="password"
             name="password"
