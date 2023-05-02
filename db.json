@@ -34,6 +34,12 @@
       "last_name": "Lehnbom",
       "email": "alexander@sundsgarden.se",
       "password": "password"
+    },
+    {
+      "name": "David Church",
+      "email": "Dave.church721@gmail.com",
+      "password": "sasdasdas",
+      "id": 6
     }
   ]
 }
