@@ -7,6 +7,7 @@ import ProtectedRoutes from "./ProtectedRoutes";
 import Modal from "./Modal";
 import { useState } from "react";
 
+
 function App() {
   // Create a state variable (showModal) to track if the modal is open
   // Set the initial value to false (modal is closed)
