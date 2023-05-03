@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
-import Signup from './Signup';
-import Login from './Login';
+
+import Signup from "./Signup";
+import Login from "./Login";
+import { MdClose } from "react-icons/md";
+import { useState } from "react";
 
 function Modal() {
   const [isModalVisible, setIsModalVisible] = useState(true);
@@ -13,6 +15,9 @@ function Modal() {
     <div>
       {isModalVisible && (
         <>
+          <button onClick={handleExit} className="exit-btn">
+            Exit
+          </button>
           <button onClick={handleExit} className="exit-btn">Exit</button>
           <Signup />
           <Login />
