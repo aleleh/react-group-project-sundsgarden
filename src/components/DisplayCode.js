@@ -1,16 +1,13 @@
 import { useState } from "react";
+import codeSnippets from "../data/CodeSnippets";
 
 const DisplayCode = () => {
     
-    // Code array
-    const codeSnippets = ['const variable = "hello";', 
-        'let number = 45;', 
-        'function Name() {};'
-    ];
 
     const [index, setIndex] = useState(0);
     const [snippet, setSnippet] = useState("");
     
+
 
     const btnClicked = (e) => {
         e.preventDefault();
@@ -21,7 +18,6 @@ const DisplayCode = () => {
         } else {
             setSnippet("No more snippets");
         }
-        
     };
 
     
