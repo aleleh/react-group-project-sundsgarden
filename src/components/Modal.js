@@ -3,6 +3,7 @@ import Signup from "./Signup";
 import Login from "./Login";
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { BiXCircle } from "react-icons/bi";
 
 function Modal() {
   const [isModalVisible, setIsModalVisible] = useState(true);
@@ -14,10 +15,10 @@ function Modal() {
   };
 
   return (
-    <div>
+    <div className="modal">
       {isModalVisible && (
         <>
-          <button onClick={handleExit} className="exit-btn">Exit</button>
+          <button onClick={handleExit} className="exit-btn"><BiXCircle /></button>
           <Signup />
           <Login />
         </>
