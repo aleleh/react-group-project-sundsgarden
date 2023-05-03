@@ -1,27 +1,24 @@
 import { useState } from "react";
+import codeSnippets from "../data/CodeSnippets";
 
 const DisplayCode = () => {
     
-    // Code array
-    const codeSnippets = ['const variable = "hello";', 
-        'let number = 45;', 
-        'function Name() {};'
-    ];
 
     const [index, setIndex] = useState(0);
     const [snippet, setSnippet] = useState("");
     
-
-    const btnClicked = (e) => {
-        e.preventDefault();
-        console.log("clicked");
+    const nextSnippet = () => {
         if (index < codeSnippets.length) {
             setIndex(index + 1);
             setSnippet(codeSnippets[index]);
         } else {
             setSnippet("No more snippets");
         }
-        
+    };
+
+    const btnClicked = (e) => {
+        e.preventDefault();
+        nextSnippet();
     };
 
     
@@ -29,7 +26,7 @@ const DisplayCode = () => {
     return (
         <div>
             <p>Code to copy:</p>
-            <h1>{snippet}</h1>
+            <h1 className="snippet-box">{snippet}</h1>
             <button onClick={btnClicked}>click for code</button>
         </div>
     );
