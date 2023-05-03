@@ -3,7 +3,7 @@ import TextInput from "./TextInput";
 
 const Game = () => {
     return (
-        <div>
+        <div className="game-container">
             <h1>GAME</h1>
             <DisplayCode/>
             <TextInput/>
