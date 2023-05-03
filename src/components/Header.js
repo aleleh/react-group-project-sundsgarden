@@ -9,7 +9,7 @@ const Header = ({ showModal, closeModal }) => {
   // Check if the current route is the "/modal" route
   const isModalRoute = location.pathname === "/modal";
 
-  // Function to open the modal by navigating to the "/modal" route
+  // Function to open the model by navigating to the "/modal" route
   // if the user is not already on that route
   const openModal = () => {
     if (!isModalRoute) {
