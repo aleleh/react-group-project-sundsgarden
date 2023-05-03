@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import Header from './Header';
 import Button from './Button';
 
@@ -8,7 +9,7 @@ const Home = () => {
       <div className="Home">
         <h1>Typing Game</h1>
         <Button>
-          <a className="button" href="#">Click here to start the game</a>
+          <Link to="/" className="button">Click here to start the game</Link>
         </Button>
         </div>
     </>
