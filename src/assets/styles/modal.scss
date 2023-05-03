@@ -31,3 +31,17 @@
     right: 1rem;
     cursor: pointer;
   }
+
+  .modal {
+
+    .exit-btn {
+      background-color: transparent;
+      border: none;
+      font-size: 2em;
+    }
+
+    .exit-btn:hover {
+    cursor: pointer;
+    }
+    
+  }
