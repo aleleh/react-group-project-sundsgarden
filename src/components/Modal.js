@@ -14,9 +14,6 @@ function Modal() {
     <div>
       {isModalVisible && (
         <>
-          <button onClick={handleExit} className="exit-btn">
-            Exit
-          </button>
           <button onClick={handleExit} className="exit-btn">Exit</button>
           <Signup />
           <Login />
