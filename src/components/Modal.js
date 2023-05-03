@@ -1,7 +1,6 @@
 
 import Signup from "./Signup";
 import Login from "./Login";
-import { MdClose } from "react-icons/md";
 import { useState } from "react";
 
 function Modal() {
