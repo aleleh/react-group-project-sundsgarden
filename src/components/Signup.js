@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Signup = () => {
+function Signup() {
   /* Declares three state variables - all with an empty string from start*/
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");

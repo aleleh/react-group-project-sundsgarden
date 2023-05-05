@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import DisplayCode from './DisplayCode';
 import TextInput from './TextInput';
 import TimeUpPopup from './TimeUpPopup';
+import Timer from './Timer';
 
 const Game = () => {
   // Manage if the game has started
@@ -56,6 +57,7 @@ const Game = () => {
   return (
     <div className="game-container">
       <h1>GAME</h1>
+      <Timer gameStarted={gameStarted} />
       <button onClick={handleStartGame}>Start game</button>
       {countdown > 0 && <h2>Starting in {countdown}</h2>}
       <DisplayCode />
