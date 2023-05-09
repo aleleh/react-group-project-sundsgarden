@@ -19,7 +19,7 @@ function Timer(props) {
 
     return () => clearInterval(interval);
     // Clears the interval when the effect is finished//
-    // The empty array ensures that the timer only runs once when it is rendered//
+    // Tracks changed to gameStarted //
     }, [props.gameStarted]);
 
 return (

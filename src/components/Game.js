@@ -36,7 +36,9 @@ const Game = () => {
   const handleStartGame = () => {
     // Set the countdown value and set gameStarted to true
     setCountdown(5);
+    setTimeout(() => {
     setGameStarted(true);
+    }, 5000);
   };
 
     // Function to handle play again
