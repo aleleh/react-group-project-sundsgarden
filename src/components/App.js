@@ -6,6 +6,8 @@ import Game from "./Game";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Modal from "./Modal";
 
+import Button from "./Temporary";
+
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +20,7 @@ function App() {
           </Route>
           <Route path="/Modal" element={<Modal />} />
         </Routes>
+        <Button/>
         <Footer />
       </div>
     </BrowserRouter>
