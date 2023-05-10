@@ -55,7 +55,7 @@ const Game = () => {
           placeholder="Type the word here..."
           ref={inputRef}
         />
-        {error && <p className="error-message">Please try again</p>}
+        {error && <p>Please try again</p>}
         <button onClick={ButtonClick}>{buttonText}</button>
       </div>
     </>
