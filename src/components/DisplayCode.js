@@ -26,7 +26,7 @@ const DisplayCode = () => {
     return (
         <div>
             <p>Code to copy:</p>
-            <h1 className="snippet-box multi-line">{snippet}</h1>
+            <h1 className="snippet-box multiline">{snippet}</h1>
             <button onClick={btnClicked}>click for code</button>
         </div>
     );

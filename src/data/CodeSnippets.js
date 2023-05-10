@@ -1,4 +1,4 @@
-const codeSnippets = [
+const codeSnippets = [   
     `import { useState } from "react";
     
     const Button = () => {
