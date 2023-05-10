@@ -1,18 +1,21 @@
-import { useState } from "react";
+const Array = () => {
+    const trees = [
+        "Birch",
+        "Oak",
+        "Maple",
+        "Pine"
+    ];
 
-const Button = () => {
-    const [message, setMessage] = useState("");
-
-    function btnPressed() {
-        setMessage("Hello World!")
-    };
+    const listItems = trees.map((item) => 
+        <li>{item}</li>
+    );
 
     return (
         <div>
-            <button type="button" onClick={btnPressed}>Click me!</button>
-            <h1>{message}</h1>
+            <h1>Trees</h1>
+            <ul>{listItems}</ul>
         </div>
     );
 };
 
-export default Button;
+export default Array;
