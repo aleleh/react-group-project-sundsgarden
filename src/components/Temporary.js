@@ -1,21 +1,5 @@
-const Array = () => {
-    const trees = [
-        "Birch",
-        "Oak",
-        "Maple",
-        "Pine"
-    ];
-
-    const listItems = trees.map((item) => 
-        <li>{item}</li>
-    );
-
-    return (
-        <div>
-            <h1>Trees</h1>
-            <ul>{listItems}</ul>
-        </div>
-    );
+const Component = () => {
+    return <div>Hello</div>;
 };
 
-export default Array;
+export default Component;

@@ -6,7 +6,7 @@ import Game from "./Game";
 import ProtectedRoutes from "./ProtectedRoutes";
 import Modal from "./Modal";
 
-import Array from "./Temporary";
+import Component from "./Temporary";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           </Route>
           <Route path="/Modal" element={<Modal />} />
         </Routes>
-        {/* <Array/> */}
+        <Component/>
         <Footer />
       </div>
     </BrowserRouter>
