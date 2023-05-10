@@ -1,9 +1,6 @@
 import Header from './Header';
 import React, { useState, useRef } from 'react';
 
-const word = document.getElementById("word");
-const text = document.getElementById("text");
-
 const words = [
     "dog",
     "admit",
@@ -22,18 +19,17 @@ function getRandomWord() {
 const Game = () => {
   const [randomWord, setRandomWord] = useState(getRandomWord());
   const [error, setError] = useState(false);
-  const [buttonText, setButtonText] = useState('check');
+  const [buttonText, setButton] = useState('check');
   const inputRef = useRef(null);
-  const endgameEl = useRef(null);
 
   function addWordToDOM() {
     const newRandomWord = getRandomWord();
     setRandomWord(newRandomWord);
     setError(false);
-    setButtonText('Next');
+    setButton('Next');
   }
 
-  function handleButtonClick() {
+  function ButtonClick() {
     const insertedText = inputRef.current.value;
 
     if (insertedText === randomWord) {
@@ -41,27 +37,26 @@ const Game = () => {
       inputRef.current.value = '';
     } else {
       setError(true);
-      setButtonText('Try Again');
+      setButton('Try Again');
     }
   }
 
   return (
     <>
       <Header />
-      <div ref={endgameEl} className="Home">
+      <div id="word" className="Home">
         <h2>Typing Game</h2>
         <small>Type the following:</small>
         <p>{randomWord}</p>
 
         <input
           type="text"
-          id="text"
           autoComplete="off"
           placeholder="Type the word here..."
           ref={inputRef}
         />
         {error && <p className="error-message">Please try again</p>}
-        <button onClick={handleButtonClick}>{buttonText}</button>
+        <button onClick={ButtonClick}>{buttonText}</button>
       </div>
     </>
   );
