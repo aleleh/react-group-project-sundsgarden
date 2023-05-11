@@ -63,7 +63,7 @@ const Game = () => {
       <Timer gameStarted={gameStarted} />
       <button onClick={handleStartGame}>Start game</button>
       {countdown > 0 && <h2>Starting in {countdown}</h2>}
-      <DisplayCode />
+      <DisplayCode isGameStarted={gameStarted} />
       <TextInput />
       {gameOver && <TimeUpPopup PlayAgain={playAgain} Quit={quit} />}
     </div>

@@ -1,35 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import codeSnippets from "../data/CodeSnippets";
+import Game from "./Game";
 
-const DisplayCode = () => {
-    
+const DisplayCode = ({ isGameStarted }) => {
+  const [index, setIndex] = useState(0);
+  const [snippet, setSnippet] = useState("");
 
-    const [index, setIndex] = useState(0);
-    const [snippet, setSnippet] = useState("");
-    
-    const nextSnippet = () => {
-        if (index < codeSnippets.length) {
-            setIndex(index + 1);
-            setSnippet(codeSnippets[index]);
-        } else {
-            setSnippet("No more snippets");
-        }
-    };
+  const nextSnippet = () => {
+    // Checks if isGameStarted is true before running function // 
+    if (isGameStarted) {
+      if (index < codeSnippets.length) {
+        setIndex(index + 1);
+        setSnippet(codeSnippets[index]);
+      } else {
+        setSnippet("No more snippets");
+      }
+    }
+  };
 
-    const btnClicked = (e) => {
-        e.preventDefault();
-        nextSnippet();
-    };
+  useEffect(() => {
+    // Calls 'nextSnippet' function if isGameStarted is true //
+    if (isGameStarted) {
+      nextSnippet();
+    }
+  }, [isGameStarted]);
 
-    
 
-    return (
-        <div>
-            <p>Code to copy:</p>
-            <h1 className="snippet-box">{snippet}</h1>
-            <button onClick={btnClicked}>click for code</button>
-        </div>
-    );
+  return (
+    <div>
+      <p>Code to copy:</p>
+      <h1 className="snippet-box">{snippet}</h1>
+    </div>
+  );
 };
 
 export default DisplayCode;
