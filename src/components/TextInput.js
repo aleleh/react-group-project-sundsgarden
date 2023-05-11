@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const TextInput = () => {
     // variable to store input
     const [input, setinput] = useState("");
+    
 
     // function to set input
     const handleInput = (e) => {
@@ -18,6 +19,6 @@ const TextInput = () => {
             <h5>{input}</h5>
         </div>
     );
-};
+}; 
 
 export default TextInput;
