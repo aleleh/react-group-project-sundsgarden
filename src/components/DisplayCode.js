@@ -21,7 +21,7 @@ const DisplayCode = () => {
         nextSnippet();
     };
 
-    
+     
 
     return (
         <div>

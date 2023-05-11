@@ -4,6 +4,7 @@ import DisplayCode from './DisplayCode';
 import TextInput from './TextInput';
 import TimeUpPopup from './TimeUpPopup';
 import Timer from './Timer';
+import Compare from './Compare';
 
 const Game = () => {
   // Manage if the game has started
@@ -63,8 +64,7 @@ const Game = () => {
       <Timer gameStarted={gameStarted} />
       <button onClick={handleStartGame}>Start game</button>
       {countdown > 0 && <h2>Starting in {countdown}</h2>}
-      <DisplayCode />
-      <TextInput />
+      <Compare />
       {gameOver && <TimeUpPopup PlayAgain={playAgain} Quit={quit} />}
     </div>
   );
