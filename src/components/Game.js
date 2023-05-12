@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import TextInput from './TextInput';
 import TimeUpPopup from './TimeUpPopup';
 import Timer from './Timer';
 import Compare from './Compare';
