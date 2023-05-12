@@ -1,8 +1,9 @@
 import codeSnippets from "../data/CodeSnippets";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import Game from "./Game";
 
 
-const Compare = () => {
+const Compare = (props) => {
 
     const [error, setError] = useState(false);
     const [button, setButton] = useState('check');
@@ -23,18 +24,22 @@ const Compare = () => {
             }
         };
 
-        const btnClicked = (e) => {
-            e.preventDefault();
+        useEffect(() => {
+            if (props.gameStarted) {
+
+            // This function needs to be written outside of the use effect hook to work properly and compare the input to the code //
+        
             const insertedText = inputRef.current.value;
-    
             if (insertedText === snippet) {
             nextSnippet();
             inputRef.current.value = '';
             } else {
             setError(true);
             setButton('Try Again');
+            nextSnippet();
         }
-        };
+        }
+     }, [props.gameStarted]);
 
     
 
@@ -55,9 +60,9 @@ const Compare = () => {
             ref={inputRef}
             />
             {error && <p className="error-message">Please try again</p>}
-            <button onClick={btnClicked}>{button}</button>
+            {/* <button onClick={btnClicked}>{button}</button> */}
             </div>
-            <button onClick={btnClicked}>click for code</button>
+            
         </div>
     );
 };
