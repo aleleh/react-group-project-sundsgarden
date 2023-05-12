@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import DisplayCode from './DisplayCode';
 import TextInput from './TextInput';
 import TimeUpPopup from './TimeUpPopup';
 import Timer from './Timer';
@@ -64,7 +63,7 @@ const Game = () => {
       <Timer gameStarted={gameStarted} />
       <button onClick={handleStartGame}>Start game</button>
       {countdown > 0 && <h2>Starting in {countdown}</h2>}
-      <Compare />
+      <Compare gameStarted={gameStarted} />
       {gameOver && <TimeUpPopup PlayAgain={playAgain} Quit={quit} />}
     </div>
   );
