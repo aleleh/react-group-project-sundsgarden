@@ -1,6 +1,8 @@
 import codeSnippets from "../data/CodeSnippets";
 import { useState, useRef, useEffect } from "react";
 import Game from "./Game";
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const Compare = (props) => {
   const [error, setError] = useState(false);
@@ -8,17 +10,18 @@ const Compare = (props) => {
 
   const [index, setIndex] = useState(0);
   const [snippet, setSnippet] = useState("");
+  
 
   const handleSubmit = (e) => {
     // Function to compare user input to code snippet //
     e.preventDefault();
     const insertedText = inputRef.current.value;
-    if (insertedText === snippet) {
+    if (insertedText === snippet.code) {
       nextSnippet();
-    // Clears input field //
+      // Clears input field //
       inputRef.current.value = "";
     } else {
-        // Display error message //
+      // Display error message //
       setError(true);
     }
   };
@@ -26,11 +29,10 @@ const Compare = (props) => {
   const nextSnippet = () => {
     setError(false);
 
-
     inputRef.current.value = "";
     if (index < codeSnippets.length - 1) {
-        // using prevState to update the state as it wasn't working properly before and not updating correctly.  This enables the state to be updated and sets the state correctly. 
-      setIndex(prevIndex => prevIndex + 1);
+      // using prevState to update the state as it wasn't working properly before and not updating correctly.  This enables the state to be updated and sets the state correctly.
+      setIndex((prevIndex) => prevIndex + 1);
       setSnippet(codeSnippets[index + 1]);
     } else {
       setSnippet("No more snippets");
@@ -49,7 +51,9 @@ const Compare = (props) => {
       <div id="word" className="Home">
         <h2>Typing Game</h2>
         <small>Type the following:</small>
-        <p>{snippet}</p>
+        <SyntaxHighlighter language="javascript" style={darcula}>
+          {snippet.code}
+        </SyntaxHighlighter>
 
         <form onSubmit={handleSubmit}>
           <input
@@ -59,7 +63,6 @@ const Compare = (props) => {
             ref={inputRef}
           />
           {error && <p className="error-message">Please try again</p>}
-         
         </form>
       </div>
     </div>
