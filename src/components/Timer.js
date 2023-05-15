@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function Timer(props) {
     // A state variable with seconds holding the current state and set to 60 from start. setSeconds will be used to update the state//
-    const [seconds, setSeconds] = useState(3);
+    const [seconds, setSeconds] = useState(60);
 
     useEffect(() => {
         let interval;
