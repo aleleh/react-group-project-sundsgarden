@@ -1,6 +1,8 @@
-const codeSnippets = [   
-    `import { useState } from "react";
-    
+const codeSnippets = [
+  {
+    language: "javascript",
+    code: `import { useState } from "react";
+  
     const Button = () => {
         const [message, setMessage] = useState("");
     
@@ -17,29 +19,31 @@ const codeSnippets = [
     };
     
     export default Button;`,
-
-    `const Array = () => {
-        const trees = [
-            "Birch",
-            "Oak",
-            "Maple",
-            "Pine"
-        ];
-    
-        const listItems = trees.map((item) => 
-            <li>{item}</li>
-        );
-    
-        return (
-            <div>
-                <h1>Trees</h1>
-                <ul>{listItems}</ul>
-            </div>
-        );
-    };
-    
-    export default Array;`
-const codeSnippets = [
+  },
+  {
+    language: "javascript",
+    code: `const Array = () => {
+      const trees = [
+          "Birch",
+          "Oak",
+          "Maple",
+          "Pine"
+      ];
+  
+      const listItems = trees.map((item) => 
+          <li>{item}</li>
+      );
+  
+      return (
+          <div>
+              <h1>Trees</h1>
+              <ul>{listItems}</ul>
+          </div>
+      );
+  };
+  
+  export default Array;`,
+  },
   {
     language: "javascript",
     code: 'const variable = "hello";',
@@ -87,3 +91,9 @@ const codeSnippets = [
 ];
 
 export default codeSnippets;
+
+
+ 
+
+
+  
