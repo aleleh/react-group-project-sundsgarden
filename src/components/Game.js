@@ -16,9 +16,9 @@ const Game = () => {
 
   const [timeUp, setTimeUp] = useState(false);
 
-
   const navigate = useNavigate();
 
+  const [charactersTyped, setCharactersTyped] = useState(0);
 
   // Handle the countdown timer
   useEffect(() => {
@@ -76,8 +76,8 @@ const Game = () => {
       <div className="starting-in">
         {countdown > 0 && <h2>Starting in {countdown}</h2>}
       </div>
-      <Compare gameStarted={gameStarted} inputRef={inputRef} />
-      {timeUp && <TimeUpPopup PlayAgain={playAgain} Quit={quit} />}
+      <Compare gameStarted={gameStarted} inputRef={inputRef} setCharactersTyped={setCharactersTyped} />
+      {timeUp && <TimeUpPopup PlayAgain={playAgain} Quit={quit} charactersTyped={charactersTyped} />}
     </div>
   );
 };
