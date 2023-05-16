@@ -14,7 +14,7 @@ function Signup() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();``
+    e.preventDefault();
     // makes a .get request to the fake json server to retrieve user data//
     // uses .then to call the check email function, checks the res data returned for a matching email //
     const user = await axios
