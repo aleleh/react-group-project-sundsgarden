@@ -33,15 +33,40 @@
   }
 
   .modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 35vh;
 
     .exit-btn {
       background-color: transparent;
       border: none;
-      font-size: 2em;
+      font-size: 2.5em;
+      align-self: flex-start;
+      margin-top: 0.2em;
     }
 
     .exit-btn:hover {
     cursor: pointer;
     }
     
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7em;
+
+    .form {
+      display: flex;
+      column-gap: 1em;
+      
+
+      &-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3em;
+      }
+    }
   }
