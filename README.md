@@ -6,6 +6,8 @@ json-server-auth
 react-modal
 axios
 react-router-dom
+react-syntax-highlighter
+
 
 
 TO USE FAKE JSON SERVER

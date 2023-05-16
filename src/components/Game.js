@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import DisplayCode from './DisplayCode';
-import TextInput from './TextInput';
 import TimeUpPopup from './TimeUpPopup';
 import Timer from './Timer';
+import Compare from './Compare';
 
 const Game = () => {
   // Manage if the game has started
@@ -11,7 +10,8 @@ const Game = () => {
   // Manage the countdown before the game starts
   const [countdown, setCountdown] = useState(0);
 
-  const [gameOver, setGameOver] = useState(false);
+  const [timeUp, setTimeUp] = useState(false);
+
 
   const navigate = useNavigate();
 
@@ -36,20 +36,27 @@ const Game = () => {
   const handleStartGame = () => {
     // Set the countdown value and set gameStarted to true
     setCountdown(5);
+    // Added interval to sync countdown with start game
+    setTimeout(() => {
     setGameStarted(true);
+    }, 5000);
+  };
+
+  const handleTimeUp = () => {
+    setTimeUp(true);
   };
 
     // Function to handle play again
   const playAgain = () => {
-    setGameOver(false);
+    setTimeUp(false);
     setGameStarted(false);
      // Resets countdown and start the game
     setCountdown(5);
   };
 
   const quit = () => {
-    setGameOver(false);
     setGameStarted(false);
+    setTimeUp(false);
     // Redirect to home page
     navigate('/');
   };
@@ -57,12 +64,11 @@ const Game = () => {
   return (
     <div className="game-container">
       <h1>GAME</h1>
-      <Timer gameStarted={gameStarted} />
+      <Timer gameStarted={gameStarted} onTimeUp={handleTimeUp} />
       <button onClick={handleStartGame}>Start game</button>
       {countdown > 0 && <h2>Starting in {countdown}</h2>}
-      <DisplayCode />
-      <TextInput />
-      {gameOver && <TimeUpPopup PlayAgain={playAgain} Quit={quit} />}
+      <Compare gameStarted={gameStarted} />
+      {timeUp && <TimeUpPopup PlayAgain={playAgain} Quit={quit} />}
     </div>
   );
 };
