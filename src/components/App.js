@@ -9,7 +9,7 @@ import Modal from "./Modal";
 function App() {
   return (
     <BrowserRouter>
-      <div>
+      <div className="body">
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />

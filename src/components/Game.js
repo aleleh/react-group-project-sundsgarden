@@ -73,7 +73,9 @@ const Game = () => {
       <h1>GAME</h1>
       <Timer gameStarted={gameStarted} onTimeUp={handleTimeUp} />
       <button onClick={handleStartGame}>Start game</button>
-      {countdown > 0 && <h2>Starting in {countdown}</h2>}
+      <div className="starting-in">
+        {countdown > 0 && <h2>Starting in {countdown}</h2>}
+      </div>
       <Compare gameStarted={gameStarted} inputRef={inputRef} />
       {timeUp && <TimeUpPopup PlayAgain={playAgain} Quit={quit} />}
     </div>

@@ -55,9 +55,11 @@ function handleSubmit(e) {
 
   // Render the login form and display message based on state
   return (
-    <div>
+    <div className="form-container">
       <h2>Already a user? Log in</h2>
-      <form className="login-form" onSubmit={handleSubmit}>
+      <form className="form" onSubmit={handleSubmit}>
+      <div className="form-item">
+        <label htmlFor="email">Email:</label>
         <input
           type="text"
           placeholder="Email"
@@ -65,6 +67,9 @@ function handleSubmit(e) {
           name="email"
           onChange={handleChange}
         />
+      </div>
+      <div className="form-item">
+      <label htmlFor="email">Email:</label>
         <input
           type="password"
           placeholder="Password"
@@ -72,6 +77,7 @@ function handleSubmit(e) {
           name="password"
           onChange={handleChange}
         />
+      </div>
         <button className="login-btn" type="submit">
           Log in
         </button>

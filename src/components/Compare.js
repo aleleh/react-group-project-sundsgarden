@@ -54,8 +54,7 @@ const Compare = (props) => {
 
   return (
     <div>
-      <div id="word" className="Home">
-        <h2>Typing Game</h2>
+      <div id="word" className="codeinput-container">
         <small>Type the following:</small>
         <SyntaxHighlighter language="javascript" style={darcula}>
           {snippet.code}
@@ -68,8 +67,10 @@ const Compare = (props) => {
             placeholder="Type the word here..."
             ref={inputRef}
           />
-          {error && <p className="error-message">Please try again</p>}
         </form>
+        <div className="error-message">
+          {error && <p className="error-message">Please try again</p>}
+        </div>
       </div>
     </div>
   );

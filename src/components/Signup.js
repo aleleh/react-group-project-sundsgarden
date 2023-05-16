@@ -48,11 +48,10 @@ function Signup() {
   return (
     /* standard sign up form */
     <div className="form-container">
-      <div className="input-container">
-        <h3> Sign Up!</h3>
-
-        <label htmlFor="name">Full Name</label>
-        <form id="form" className="form-layout" onSubmit={handleSubmit}>
+      <h3> Sign Up!</h3>      
+      <form id="form" className="form" onSubmit={handleSubmit}>
+        <div className="form-item">
+          <label htmlFor="name">Full Name:</label>
           <input
             type="text"
             name="name"
@@ -63,7 +62,10 @@ function Signup() {
             onChange={(e) => setName(e.target.value)}
             placeholder="Full Name"
           />
+        </div>
 
+        <div className="form-item">
+          <label htmlFor="email">Email:</label>
           <input
             type="email"
             name="email"
@@ -72,7 +74,10 @@ function Signup() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email Address"
           />
+        </div>
 
+        <div className="form-item">
+          <label htmlFor="name">Password:</label>
           <input
             type="password"
             name="password"
@@ -81,12 +86,12 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
           />
+        </div>
 
-          <button type="submit" className="submit-btn">
-            Sign Up!
-          </button>
-        </form>
-      </div>
+        <button type="submit" className="submit-btn">
+          Sign Up!
+        </button>
+      </form>
     </div>
   );
 }

@@ -18,28 +18,28 @@ const Header = ({ showModal, closeModal }) => {
   };
 
   return (
-    <nav>
-      <ul>
-        <li>
-          {/* Link to the home page */}
-          <Link className="links" to="/">
-            Home
-          </Link>
-        </li>
-        <li>
-          {/* Link to the game page */}
-          <Link className="links" to="/game">
-            Game
-          </Link>
-        </li>
-        <li>
-          {/* Button to open the modal when clicked */}
-          <button onClick={openModal}>Sign up/Log in</button>
-        </li>
-      </ul>
-      {/* Render the modal component if showModal is true */}
-      {showModal && <Modal closeModal={closeModal} />}
-    </nav>
+    <header className="header">
+      <nav className="header-nav">
+        <ul className="header-list">
+          <li>
+            {/* Link to the home page */}
+            <Link className="links" to="/">
+              Home
+            </Link>
+          </li>
+          <li>
+            {/* Link to the game page */}
+            <Link className="links" to="/game">
+              Game
+            </Link>
+          </li>
+        </ul>
+        {/* Button to open the modal when clicked */}
+        <button onClick={openModal}>Sign up/Log in</button>
+        {/* Render the modal component if showModal is true */}
+        {showModal && <Modal closeModal={closeModal} />}
+      </nav>
+    </header>
   );
 };
 

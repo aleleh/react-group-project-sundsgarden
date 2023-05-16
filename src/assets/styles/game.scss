@@ -1,11 +1,30 @@
 .game-container {
+    max-width: 50vw;
+    width: 100%;
+    min-height: 70vh;
+    margin-top: 4em;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    row-gap: 5em;
 }
 
-.snippet-box {
-    border: 2px solid green;
-    padding: 3px;
-    background-color: rgb(236, 236, 236);
+.codeinput-container {
+    width: 100%;
+    min-height: 20vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.error-message {
+    min-height: 1.2em;
+}
+
+.starting-in {
+    min-height: 1.2em;
 }
