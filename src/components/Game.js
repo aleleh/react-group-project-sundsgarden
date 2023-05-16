@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TimeUpPopup from './TimeUpPopup';
 import Timer from './Timer';
 import Compare from './Compare';
 
+
 const Game = () => {
+  // Create ref instance to manage input element focus
+  const inputRef = useRef(null);
+
   // Manage if the game has started
   const [gameStarted, setGameStarted] = useState(false);
   // Manage the countdown before the game starts
@@ -38,9 +42,12 @@ const Game = () => {
     setCountdown(5);
     // Added interval to sync countdown with start game
     setTimeout(() => {
-    setGameStarted(true);
-    }, 5000);
-  };
+      setGameStarted(true);
+      if (inputRef.current) {
+          inputRef.current.focus();
+      }
+  }, 5000);
+};
 
   const handleTimeUp = () => {
     setTimeUp(true);
@@ -67,7 +74,7 @@ const Game = () => {
       <Timer gameStarted={gameStarted} onTimeUp={handleTimeUp} />
       <button onClick={handleStartGame}>Start game</button>
       {countdown > 0 && <h2>Starting in {countdown}</h2>}
-      <Compare gameStarted={gameStarted} />
+      <Compare gameStarted={gameStarted} inputRef={inputRef} />
       {timeUp && <TimeUpPopup PlayAgain={playAgain} Quit={quit} />}
     </div>
   );

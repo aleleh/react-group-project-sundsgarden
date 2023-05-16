@@ -11,6 +11,12 @@ const Compare = (props) => {
   const [index, setIndex] = useState(0);
   const [snippet, setSnippet] = useState("");
   
+  // If game starts and inputRef is defined, autofocus on input 
+  useEffect(() => {
+    if (props.gameStarted && inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, [props.gameStarted]);
 
   const handleSubmit = (e) => {
     // Function to compare user input to code snippet //
