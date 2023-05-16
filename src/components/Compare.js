@@ -1,6 +1,5 @@
 import codeSnippets from "../data/CodeSnippets";
 import { useState, useRef, useEffect } from "react";
-import Game from "./Game";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
@@ -66,6 +65,19 @@ const Compare = (props) => {
             autoComplete="off"
             placeholder="Type the word here..."
             ref={inputRef}
+            // Takes previous value and adds 1 to "charactersTyped" 
+            // every time a key is pressed if it is not enter, space, shift, backspace or delete
+            onKeyDown={(e) => {
+              if (
+                e.key !== 'Enter' &&
+                e.key !== ' ' &&
+                e.key !== 'Shift' &&
+                e.key !== 'Backspace' &&
+                e.key !== 'Delete'
+              ) {
+              props.setCharactersTyped((prevValue) => prevValue + 1);
+              }
+            }}
           />
         </form>
         <div className="error-message">
