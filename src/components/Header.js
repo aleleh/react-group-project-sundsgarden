@@ -19,8 +19,8 @@ const Header = ({ showModal, closeModal }) => {
 
   return (
     <header className="header">
-      <nav className="header__nav">
-        <ul className="header__list">
+      <nav className="header-nav">
+        <ul className="header-list">
           <li>
             {/* Link to the home page */}
             <Link className="links" to="/">
