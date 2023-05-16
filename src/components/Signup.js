@@ -13,33 +13,37 @@ function Signup() {
     if (user) return user;
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-    // Using the try/catch method to handle errors //
-    // makes a get request to the fake json server and saves it in the reposonse variable //
-    const response = await axios.get("http://localhost:5000/users");
-    //checks if the inputted email already exists in the returned response.data, assigns this object to the user variable //
-    const user = checkEmail(response.data, email);
+  const handleSubmit = async (e) => {
+    e.preventDefault();``
+    // makes a .get request to the fake json server to retrieve user data//
+    // uses .then to call the check email function, checks the res data returned for a matching email //
+    const user = await axios
+      .get("http://localhost:5000/users")
+      .then((res) => checkEmail(res.data, email));
 
-    //If statement that checks if user is a truthy value, then it returns alert // 
+    //If statement that checks if user is a truthy value, then it returns alert //
     if (user) {
       alert("User already exists!");
       //else statement to create newUser variable from user input//
     } else {
       const newUser = { name, email, password };
-      //new user object is being sent to the fake json server // 
-      await axios.post("http://localhost:5000/users", newUser);
-      //once complete alert below displays//
-      alert("User created!");
+      //variable which holds an object which is being sent to the fake json server //
+      axios
+      // New user variable being sent to the j-son server using the Post method. //
+        .post("http://localhost:5000/users", newUser)
+      // .Then handles the successful promise with a callback function //
+        .then(() => {
+          //once complete alert below displays//
+          alert("User created!");
+        })
+        // catches failed promise and logs to console with callback function //
+        .catch((error) => {
+          console.error("Error:", error);
+          //displays error alert//
+          alert("An error occurred while processing your request.");
+        });
     }
-    // error handling to log error message to console//
-  } catch (error) {
-    console.error("Error:", error.message);
-    //displays error alert//
-    alert("An error occurred while processing your request.");
-  }
-};
+  };
 
   return (
     /* standard sign up form */
@@ -55,7 +59,7 @@ function Signup() {
             value={name}
             id="name"
             /* inline onChange variable to handle form input */
-            
+
             onChange={(e) => setName(e.target.value)}
             placeholder="Full Name"
           />
@@ -77,15 +81,14 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
           />
-          
+
           <button type="submit" className="submit-btn">
             Sign Up!
           </button>
-
         </form>
       </div>
     </div>
   );
-};
+}
 
 export default Signup;
