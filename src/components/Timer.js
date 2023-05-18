@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function Timer(props) {
     // A state variable with seconds holding the current state and set to 60 from start. setSeconds will be used to update the state//
-    const [seconds, setSeconds] = useState(5);
+    const [seconds, setSeconds] = useState(3);
 
     useEffect(() => {
         let interval;
@@ -20,10 +20,20 @@ function Timer(props) {
         }, 1000);
     }
 
+
     return () => clearInterval(interval);
     // Clears the interval when the effect is finished//
     // Tracks changed to gameStarted //
     }, [props.gameStarted, props.onTimeUp]);
+
+
+    useEffect(() => {
+        //Resets the countdown when props.Gamestarted becomes false. //
+        //This is fired by the play again button click, setting gameStarted to false // 
+        if (!props.gameStarted) {
+            setSeconds(3);
+        }
+    }, [props.gameStarted]);
 
 return (
     // Displays countdown //
