@@ -69,7 +69,7 @@ const Game = () => {
     <div className="game-container">
       <h1>GAME</h1>
       <Timer gameStarted={gameStarted} onTimeUp={handleTimeUp} />
-      <button onClick={handleStartGame}>Start game</button>
+      {!gameStarted && <button onClick={handleStartGame}>Start game</button>}
       <div className="starting-in">
         {countdown > 0 && <h2>Starting in {countdown}</h2>}
       </div>
