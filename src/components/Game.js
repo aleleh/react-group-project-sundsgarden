@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import TimeUpPopup from './TimeUpPopup';
-import Timer from './Timer';
-import Compare from './Compare';
-
+import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import TimeUpPopup from "./TimeUpPopup";
+import Timer from "./Timer";
+import Compare from "./Compare";
 
 const Game = () => {
   // Create ref instance to manage input element focus
@@ -44,28 +43,26 @@ const Game = () => {
     setTimeout(() => {
       setGameStarted(true);
       if (inputRef.current) {
-          inputRef.current.focus();
+        inputRef.current.focus();
       }
-  }, 5000);
-};
+    }, 5000);
+  };
 
   const handleTimeUp = () => {
     setTimeUp(true);
   };
 
-    // Function to handle play again
+  // Function to handle play again
   const playAgain = () => {
     setTimeUp(false);
     setGameStarted(false);
-     // Resets countdown and start the game
-    setCountdown(5);
   };
 
   const quit = () => {
     setGameStarted(false);
     setTimeUp(false);
     // Redirect to home page
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -76,8 +73,18 @@ const Game = () => {
       <div className="starting-in">
         {countdown > 0 && <h2>Starting in {countdown}</h2>}
       </div>
-      <Compare gameStarted={gameStarted} inputRef={inputRef} setCharactersTyped={setCharactersTyped} />
-      {timeUp && <TimeUpPopup PlayAgain={playAgain} Quit={quit} charactersTyped={charactersTyped} />}
+      <Compare
+        gameStarted={gameStarted}
+        inputRef={inputRef}
+        setCharactersTyped={setCharactersTyped}
+      />
+      {timeUp && (
+        <TimeUpPopup
+          PlayAgain={playAgain}
+          Quit={quit}
+          charactersTyped={charactersTyped}
+        />
+      )}
     </div>
   );
 };
