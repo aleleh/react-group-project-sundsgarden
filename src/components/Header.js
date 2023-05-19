@@ -9,8 +9,8 @@ const Header = () => {
                             <Link to="/" className="home">Game</Link>
                         </div>
                         <div>
-                            <Link to="/SignIn" className="sign_in">Sign in</Link>
-                            <Link to="/LogIn" className="log_in">Log in</Link>
+                        <Link to="/LogIn" className="log_in">Log in</Link>
+                        <Link to="/SignIn" className="sign_in">Sign in</Link>    
                         </div>
                     </div>
                 </nav>

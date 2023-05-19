@@ -1,12 +1,23 @@
+body{
+  background-image: url(/src/assets/images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  
+}
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-around;
   font-size: 35px;
   background-color: #000;
-  height: 160px;
+  height: 140px;
   width: 100%;
   max-width: 1500px;
+  margin-top: -10px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 .navbar a {
   text-decoration: none;
@@ -28,18 +39,51 @@
 .button {
   width: 250px;
   height: 250px;
-  border: none;
-  background-color: rgb(243, 245, 247, 0,9);
+  border-radius: 50px;
   color: rgb(255, 253, 253);
   font-size: 30px;
   margin-bottom: 20px;
   margin-top: 10px;
   text-decoration: none;
+  background-color: rgba(59, 53, 53, 0.5);
 }
+
 
 .button a:hover{
-color: rgb(2, 120, 30);
-
+color: rgb(13, 158, 47);
 }
 
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  color: rgb(255, 253, 253);
+  font-size: 30px;
+  margin-top: 50px;
+}
 
+.home1{
+  border-radius: 20px;
+  background-color: rgba(59, 53, 53, 0.5);
+  width: 250px;
+  height: 100px;
+  text-align: center;
+}
+
+.log_in1{
+  border-radius: 20px;
+  background-color: rgba(59, 53, 53, 0.5);
+  width: 250px;
+  height: 100px;
+  text-align: center;
+}
+
+.sign_in1{
+  border-radius: 20px;
+  background-color: rgba(59, 53, 53, 0.5);
+  width: 250px;
+  height: 100px;
+  text-align: center;
+  border-color: orange;
+}
