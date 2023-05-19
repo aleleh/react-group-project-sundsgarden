@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <Header />
       <div className="Home">
-        <Button>
+        <Button >
         <Link to="/Game" className="button">TYPING GAME </Link>
         </Button>
         <Button>

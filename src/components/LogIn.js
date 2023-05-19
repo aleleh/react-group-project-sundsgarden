@@ -1,9 +1,11 @@
 import Header from './Header';
+import Footer from './Footer';
 
 const LogIn = () => {
   return (
     <>
       <Header />
+      <Footer />
     </>
   );
 };
