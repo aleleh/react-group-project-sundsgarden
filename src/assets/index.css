@@ -2,33 +2,35 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 25px;
-  padding: 20px;
-  margin: 20px;
+  font-size: 35px;
+  background-color: #000;
+  height: 160px;
+  width: 100%;
+  max-width: 1500px;
 }
 .navbar a {
   text-decoration: none;
-  margin-right: 20px;
-  color: #000;
+  margin-right: 50px;
+  color: white;
 }
 .navbar a:hover {
-  color: rgba(50, 48, 48, 0.303);
+  color: rgb(2, 120, 30);
 }
 
 .Home{
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  justify-content: space-around;
   height: 60vh;
 }
 
 .button {
-  width: 500px;
-  height: 70px;
+  width: 250px;
+  height: 250px;
   border: none;
-  background-color: #f4f6f8;
-  color: #000;
+  background-color: rgb(243, 245, 247, 0,9);
+  color: rgb(255, 253, 253);
   font-size: 30px;
   margin-bottom: 20px;
   margin-top: 10px;
@@ -36,7 +38,7 @@
 }
 
 .button a:hover{
-color: rgb(97, 69, 69);
+color: rgb(2, 120, 30);
 
 }
 
