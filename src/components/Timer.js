@@ -12,7 +12,6 @@ function Timer(props) {
          interval = setInterval(() => {
             setSeconds(seconds => {
                 if (seconds - 1 <= 0) {
-                    props.onTimeUp();
                     return 0;
                 }
                 return seconds - 1;
@@ -24,16 +23,16 @@ function Timer(props) {
     return () => clearInterval(interval);
     // Clears the interval when the effect is finished//
     // Tracks changed to gameStarted //
-    }, [props.gameStarted, props.onTimeUp]);
+    }, [props.gameStarted]);
 
 
     useEffect(() => {
         //Resets the countdown when props.Gamestarted becomes false. //
         //This is fired by the play again button click, setting gameStarted to false // 
-        if (!props.gameStarted) {
-            setSeconds(3);
+        if (seconds === 0) {
+            props.onTimeUp();
         }
-    }, [props.gameStarted]);
+    }, [seconds, props.onTimeUp]);
 
 return (
     // Displays countdown //

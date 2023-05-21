@@ -78,6 +78,7 @@ const Compare = (props) => {
               props.setCharactersTyped((prevValue) => prevValue + 1);
               }
             }}
+            disabled={props.timeUp}
           />
         </form>
         <div className="error-message">
