@@ -76,6 +76,7 @@ const Game = () => {
       <Compare
         gameStarted={gameStarted}
         inputRef={inputRef}
+        timeUp={timeUp}
         setCharactersTyped={setCharactersTyped}
       />
       {timeUp && (
