@@ -8,10 +8,11 @@ function Timer(props) {
         let interval;
         // Passes gameStarted as a prop from game.js, if true run function//
         if (props.gameStarted) {
-
+        setSeconds(3);
          interval = setInterval(() => {
             setSeconds(seconds => {
                 if (seconds - 1 <= 0) {
+                    props.onTimeUp();
                     return 0;
                 }
                 return seconds - 1;
@@ -19,20 +20,10 @@ function Timer(props) {
         }, 1000);
     }
 
-
     return () => clearInterval(interval);
     // Clears the interval when the effect is finished//
     // Tracks changed to gameStarted //
     }, [props.gameStarted]);
-
-
-    useEffect(() => {
-        //Resets the countdown when props.Gamestarted becomes false. //
-        //This is fired by the play again button click, setting gameStarted to false // 
-        if (seconds === 0) {
-            props.onTimeUp();
-        }
-    }, [seconds, props.onTimeUp]);
 
 return (
     // Displays countdown //

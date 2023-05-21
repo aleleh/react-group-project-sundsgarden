@@ -19,6 +19,9 @@ const Game = () => {
 
   const [charactersTyped, setCharactersTyped] = useState(0);
 
+  const [inputValue, setInputValue] = useState('');
+
+
   // Handle the countdown timer
   useEffect(() => {
     // Check if the countdown is greater than 0
@@ -56,6 +59,8 @@ const Game = () => {
   const playAgain = () => {
     setTimeUp(false);
     setGameStarted(false);
+    setCharactersTyped(0);
+    setInputValue('');
   };
 
   const quit = () => {
