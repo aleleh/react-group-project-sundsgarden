@@ -6,7 +6,7 @@ import { darcula } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 const Compare = (props) => {
   const [error, setError] = useState(false);
   const inputRef = useRef(null);
-
+  const [inputValue, setInputValue] = useState('');
   const [index, setIndex] = useState(0);
   const [snippet, setSnippet] = useState("");
   
@@ -24,7 +24,7 @@ const Compare = (props) => {
     if (insertedText === snippet.code) {
       nextSnippet();
       // Clears input field //
-      inputRef.current.value = "";
+      setInputValue('');
     } else {
       // Display error message //
       setError(true);
@@ -34,7 +34,7 @@ const Compare = (props) => {
   const nextSnippet = () => {
     setError(false);
 
-    inputRef.current.value = "";
+    setInputValue('');
     if (index < codeSnippets.length - 1) {
       // using prevState to update the state as it wasn't working properly before and not updating correctly.  This enables the state to be updated and sets the state correctly.
       setIndex((prevIndex) => prevIndex + 1);
@@ -48,8 +48,10 @@ const Compare = (props) => {
     //Passes gameStarted as a prop from game component, if true sets displays first snippet in codeSnippets array //
     if (props.gameStarted) {
       setSnippet(codeSnippets[0]);
+      setInputValue('');
     }
   }, [props.gameStarted]);
+
 
   return (
     <div>
@@ -61,6 +63,8 @@ const Compare = (props) => {
 
         <form onSubmit={handleSubmit}>
           <input
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
             type="text"
             autoComplete="off"
             placeholder="Type the word here..."
