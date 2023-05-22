@@ -8,7 +8,7 @@ function Timer(props) {
         let interval;
         // Passes gameStarted as a prop from game.js, if true run function//
         if (props.gameStarted) {
-        setSeconds(30);
+        setSeconds(3);
          interval = setInterval(() => {
             setSeconds(seconds => {
                 if (seconds - 1 <= 0) {

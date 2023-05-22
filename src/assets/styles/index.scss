@@ -24,6 +24,9 @@
 
 .btn {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 170px;
     height: 53px;
     border: none;

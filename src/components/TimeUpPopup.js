@@ -6,7 +6,7 @@ function TimeUpPopup({ PlayAgain, Quit, charactersTyped }) {
       <div className="time-up-popup">
         <h2 className="game-over">GAME OVER!</h2>
         <p className="typed">You typed {charactersTyped} characters </p>
-        <div>
+        <div className='btn-container'>
           <button onClick={PlayAgain} className="btn blue">Play again</button>
           <button onClick={Quit} className="btn blue">Quit</button>
         </div>
