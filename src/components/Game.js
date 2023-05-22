@@ -72,11 +72,11 @@ const Game = () => {
 
   return (
     <div className="game-container">
-      <h1>GAME</h1>
+      <h1 className="game-heading light">GAME</h1>
       <Timer gameStarted={gameStarted} onTimeUp={handleTimeUp} />
       {!gameStarted && <button onClick={handleStartGame} className="btn">Start game</button>}
       <div className="starting-in">
-        {countdown > 0 && <h2>Starting in {countdown}</h2>}
+        {countdown > 0 && <h2 className="light">Starting in {countdown}</h2>}
       </div>
       <Compare
         gameStarted={gameStarted}

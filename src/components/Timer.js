@@ -8,7 +8,7 @@ function Timer(props) {
         let interval;
         // Passes gameStarted as a prop from game.js, if true run function//
         if (props.gameStarted) {
-        setSeconds(3);
+        setSeconds(30);
          interval = setInterval(() => {
             setSeconds(seconds => {
                 if (seconds - 1 <= 0) {
@@ -28,8 +28,8 @@ function Timer(props) {
 return (
     // Displays countdown //
     <div>
-        {seconds > 0 && <p>Countdown: {seconds}</p>}
-        {seconds <= 0 && <p>Countdown ended!</p>}
+        {seconds > 0 && <p className="light">Countdown: {seconds}</p>}
+        {seconds <= 0 && <p className="light">Countdown ended!</p>}
     </div>
     );
 };

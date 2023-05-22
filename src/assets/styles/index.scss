@@ -19,7 +19,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: #000;
+    //background-color: #000;
 }
 
 .btn {
@@ -37,11 +37,7 @@
     color: $color-green;
     font-size: 1.2em;
 
-    &.blue {
-        color: $color-blue;
-        background-color: rgba($color-blue, $alpha: .2);
-        box-shadow: 0 0 10px rgba($color-blue, $alpha: .4);
-    }
+    
     
     &::before, &::after {
         position: absolute;
@@ -50,9 +46,9 @@
         height: 45px;
         left: 0;
         top: 0;
-        border: 4px solid $color-blue;
+        border: 4px solid $color-green;
         border-radius: 16px;
-        box-shadow: 0 0 5px $color-blue;
+        box-shadow: 0 0 5px $color-green;
     }
 
     &::before {
@@ -64,3 +60,13 @@
     }
 }
 
+.btn.blue {
+    color: $color-blue;
+    background-color: rgba($color-blue, $alpha: .2);
+    box-shadow: 0 0 10px rgba($color-blue, $alpha: .4);
+
+    &::before, &::after {
+        box-shadow: 0 0 5px $color-blue;
+        border: 4px solid $color-blue;
+    }
+}
