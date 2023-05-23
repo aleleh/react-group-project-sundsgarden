@@ -77,7 +77,7 @@ function Signup() {
         </div>
 
         <div className="form-item">
-          <label htmlFor="name">Password:</label>
+          <label htmlFor="password">Password:</label>
           <input
             type="password"
             name="password"
