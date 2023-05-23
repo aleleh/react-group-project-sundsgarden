@@ -80,7 +80,7 @@ function handleSubmit(e) {
           onChange={handleChange}
         />
       </div>
-        <button className="login-btn" type="submit">
+        <button className="login-btn pointer" type="submit">
           Log in
         </button>
       </form>

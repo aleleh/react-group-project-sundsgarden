@@ -88,7 +88,7 @@ function Signup() {
           />
         </div>
 
-        <button type="submit" className="submit-btn">
+        <button type="submit" className="submit-btn pointer">
           Sign Up!
         </button>
       </form>
