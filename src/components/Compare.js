@@ -72,6 +72,7 @@ const Compare = (props) => {
             placeholder="Type the word here..."
             ref={inputRef}
             disabled={props.timeUp}
+            onPaste={(e) => e.preventDefault()}
             />
         </form>
         <div className="error-message">
