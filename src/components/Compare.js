@@ -33,6 +33,13 @@ const Compare = (props) => {
     }
   };
 
+  // useEffect to clear error message when time is up
+  useEffect(() => {
+    if (props.timeUp) {
+      setError(false);
+    }
+  }, [props.timeUp])
+
   const nextSnippet = () => {
     setError(false);
 
