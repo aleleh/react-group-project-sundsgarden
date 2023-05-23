@@ -73,3 +73,11 @@
         border: 4px solid $color-blue;
     }
 }
+
+.btn.big {
+    transform: scale(200%);
+}
+
+.no-underline {
+    text-decoration: none;
+}
