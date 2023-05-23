@@ -24,7 +24,9 @@ const Compare = (props) => {
     if (insertedText === snippet.code) {
       nextSnippet();
       // Clears input field //
-      setInputValue('');
+      inputRef.current.value = "";
+      // Increment charactersTyped when the user's input is correct
+      props.setCharactersTyped(prevValue => prevValue + insertedText.length);
     } else {
       // Display error message //
       setError(true);
@@ -69,21 +71,8 @@ const Compare = (props) => {
             autoComplete="off"
             placeholder="Type the word here..."
             ref={inputRef}
-            // Takes previous value and adds 1 to "charactersTyped" 
-            // every time a key is pressed if it is not enter, space, shift, backspace or delete
-            onKeyDown={(e) => {
-              if (
-                e.key !== 'Enter' &&
-                e.key !== ' ' &&
-                e.key !== 'Shift' &&
-                e.key !== 'Backspace' &&
-                e.key !== 'Delete'
-              ) {
-              props.setCharactersTyped((prevValue) => prevValue + 1);
-              }
-            }}
             disabled={props.timeUp}
-          />
+            />
         </form>
         <div className="error-message">
           {error && <p className="error-message">Please try again</p>}

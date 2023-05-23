@@ -2,13 +2,13 @@ import { useState, useEffect } from "react";
 
 function Timer(props) {
     // A state variable with seconds holding the current state and set to 60 from start. setSeconds will be used to update the state//
-    const [seconds, setSeconds] = useState(3);
+    const [seconds, setSeconds] = useState(10);
 
     useEffect(() => {
         let interval;
         // Passes gameStarted as a prop from game.js, if true run function//
         if (props.gameStarted) {
-        setSeconds(3);
+        setSeconds(10);
          interval = setInterval(() => {
             setSeconds(seconds => {
                 if (seconds - 1 <= 0) {
