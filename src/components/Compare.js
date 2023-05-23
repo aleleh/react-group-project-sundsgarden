@@ -71,7 +71,7 @@ const Compare = (props) => {
             autoComplete="off"
             placeholder="Type the word here..."
             ref={inputRef}
-            disabled={props.timeUp}
+            disabled={props.timeUp || props.gameStarted === false}
             onPaste={(e) => e.preventDefault()}
             />
         </form>
