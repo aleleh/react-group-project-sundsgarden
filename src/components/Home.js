@@ -1,7 +1,11 @@
+import { Link } from 'react-router-dom';
+
 const Home = () => {
   return (
     <div className="home-container">
-      <p className="btn big">PLAY GAME!</p>
+      <Link to="/game">
+      <button className="btn big"> <span>PLAY GAME!</span></button>
+      </Link>
     </div>
   );
 };
