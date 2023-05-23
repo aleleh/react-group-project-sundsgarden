@@ -37,6 +37,7 @@ const Compare = (props) => {
   useEffect(() => {
     if (props.timeUp) {
       setError(false);
+      setInputValue("");
     }
   }, [props.timeUp])
 
