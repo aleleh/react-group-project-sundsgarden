@@ -56,7 +56,7 @@ const Compare = (props) => {
   return (
     <div>
       <div id="word" className="codeinput-container">
-        <small>Type the following:</small>
+        <small className="light">Type the following:</small>
         <SyntaxHighlighter language="javascript" style={darcula}>
           {snippet.code}
         </SyntaxHighlighter>

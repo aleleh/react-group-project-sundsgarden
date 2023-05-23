@@ -35,7 +35,7 @@ const Header = ({ showModal, closeModal }) => {
           </li>
         </ul>
         {/* Button to open the modal when clicked */}
-        <button onClick={openModal}>Sign up/Log in</button>
+        <button onClick={openModal} className="links log-in-btn">Log in</button>
         {/* Render the modal component if showModal is true */}
         {showModal && <Modal closeModal={closeModal} />}
       </nav>

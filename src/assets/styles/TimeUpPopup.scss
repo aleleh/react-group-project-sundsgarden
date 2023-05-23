@@ -1,19 +1,52 @@
+@use 'colors';
+
 .time-up-popup {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 50px;
     z-index: 1000;
-  }
+    border-radius: 20px;
+    max-width: 40vw;
+    width: 100%;
+    min-height: 45vh;
+    padding: 6em 5em;
+
+    background: linear-gradient(160deg, rgba($color-red, .2), rgba($color-light, .2));
+    box-shadow: 0 25px 45px rgba(0, 0, 0, .2);
+    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-container {
+  display: flex;
+}
   
-  .time-up-backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0,0,0,0.3);
-    z-index: 500;
-  }
+.time-up-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 500;
+}  
+
+.game-over {
+  font-size: 1.7em;
+  text-decoration: underline; 
+  color: $color-red;
+  text-shadow: 1px 1px 7px $color-dark;
+}
+
+.typed {
+  color: $color-light;
+}
+
+

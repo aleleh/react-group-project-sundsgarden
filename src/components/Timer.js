@@ -28,8 +28,8 @@ function Timer(props) {
 return (
     // Displays countdown //
     <div>
-        {seconds > 0 && <p>Countdown: {seconds}</p>}
-        {seconds <= 0 && <p>Countdown ended!</p>}
+        {seconds > 0 && <p className="light">Countdown: {seconds}</p>}
+        {seconds <= 0 && <p className="light">Countdown ended!</p>}
     </div>
     );
 };
