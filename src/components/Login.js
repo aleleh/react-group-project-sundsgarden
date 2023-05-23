@@ -59,22 +59,24 @@ function handleSubmit(e) {
       <h2>Already a user? Log in</h2>
       <form className="form" onSubmit={handleSubmit}>
       <div className="form-item">
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email-login">Email:</label>
         <input
           type="text"
           placeholder="Email"
           value={formData.email}
           name="email"
+          id="email-login"
           onChange={handleChange}
         />
       </div>
       <div className="form-item">
-      <label htmlFor="email">Email:</label>
+      <label htmlFor="password-login">Password:</label>
         <input
           type="password"
           placeholder="Password"
           value={formData.password}
           name="password"
+          id="password-login"
           onChange={handleChange}
         />
       </div>
