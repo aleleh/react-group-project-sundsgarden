@@ -82,3 +82,11 @@
 .no-underline {
     text-decoration: none;
 }
+
+button:hover {
+    scale: 1.01;
+}
+
+button:active {
+    scale: 0.99;
+}
