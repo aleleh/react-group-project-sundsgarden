@@ -52,21 +52,56 @@
     }
     
   }
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
   .form-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.7em;
-
+    background-color: black;
+    color: #33ff33;
+    font-family: 'Orbitron', sans-serif;
+    padding: 2em;
+  
     .form {
       display: flex;
-      column-gap: 1em;
-      
-
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5em;
+      width: 80%;
+  
       &-item {
         display: flex;
         flex-direction: column;
         gap: 0.3em;
+  
+        input {
+          color: #33ff33;
+          background-color: black;
+          border: 1px solid #33ff33;
+          width: 100%;
+          padding: 0.5em; 
+        }
+  
+        label {
+          color: #33ff33;
+        }
+      }
+  
+      button {
+        color: #33ff33;
+        background-color: black;
+        border: 2px solid #33ff33;
+        padding: 0.5em 1em;
+        margin-top: 1em; 
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #33ff33;
+          color: black;
+        }
       }
     }
   }
