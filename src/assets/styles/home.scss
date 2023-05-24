@@ -1,5 +1,11 @@
+@use 'colors';
+
 .home-container {
     margin-top: 10em;
+    padding: 30px 80px;
+    background-color: $color-dark;
+    box-shadow: 0 0 5px $color-dark;
+    border-radius: 46px;
 }
 
 .btn.big {
