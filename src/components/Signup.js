@@ -86,6 +86,7 @@ function Signup() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
           />
+          
         </div>
 
         <button type="submit" className="submit-btn pointer">
