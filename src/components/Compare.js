@@ -73,8 +73,9 @@ const Compare = (props) => {
 
         <form onSubmit={handleSubmit}>
           <input
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+            className="input-field"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
             type="text"
             autoComplete="off"
             placeholder="Type the word here..."
