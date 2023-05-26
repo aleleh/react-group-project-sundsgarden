@@ -9,8 +9,10 @@ function Timer(props) {
         // Passes gameStarted as a prop from game.js, if true run function//
         if (props.gameStarted) {
         setSeconds(60);
+        // sets interval of one second, updates second state with new value//
          interval = setInterval(() => {
             setSeconds(seconds => {
+                // checks IF seconds reaches 0 or less to run onTimeUp function //
                 if (seconds - 1 <= 0) {
                     props.onTimeUp();
                     return 0;
