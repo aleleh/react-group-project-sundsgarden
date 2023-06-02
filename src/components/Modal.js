@@ -19,7 +19,6 @@ function Modal() {
       {isModalVisible && (
         <>
           <button onClick={handleExit} className="exit-btn"><BiXCircle /></button>
-          <Signup />
           <Login />
         </>
       )}

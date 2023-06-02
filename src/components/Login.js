@@ -22,41 +22,35 @@ function Login() {
 // Handle form submisson by sending a request to fake json server
 function handleSubmit(e) {
   e.preventDefault();
-  // Fetch data from the server
-  fetch("http://localhost:5000/users")
-  .then((res) => res.json())
-  .then((data) => {
-    //check if there is a user with matching email and pw
-    const user = data.find(
-      (user) => user.email === formData.email && user.password === formData.password
-    );
-    // if user is found, display success message
-    if (user) {
-      console.log("User found:", { ...user, password: "[hidden]" });
-      setSuccessMessage("User found");
-      setErrorMessage("");
-      navigate ("/Game");
+   // Demo user credentials
+   const demoUser = {
+    email: "demo",
+    password: "demo"
+  };
 
-      localStorage.setItem("user", JSON.stringify(user.id));
+  // Check if entered email and password match the demo user credentials
+  if (
+    formData.email === demoUser.email &&
+    formData.password === demoUser.password
+  ) {
+    console.log("User found:", { ...demoUser, password: "[hidden]" });
+    setSuccessMessage("User found");
+    setErrorMessage("");
+    navigate("/Game");
 
-    } else {
-      // if user not found, display error message
-      setErrorMessage("User not found");
-      setSuccessMessage("");
-}
-  })
-  // Handle errors by displaying error message
-  .catch((error) => {
-    console.error("Error", error);
-    setErrorMessage("An error occurred. Please try again.");
+    // Store user information in localStorage
+    localStorage.setItem("user", JSON.stringify(demoUser.id));
+  } else {
+    // Display error message if credentials do not match
+    setErrorMessage("User not found");
     setSuccessMessage("");
-  });
+  }
 }
-
   // Render the login form and display message based on state
   return (
     <div className="form-container">
-      <h2>Already a user? Log in</h2>
+      <h2>Email: demo </h2>
+      <h2>Password: demo</h2>
       <form className="form" onSubmit={handleSubmit}>
       <div className="form-item">
         <label htmlFor="email-login">Email:</label>

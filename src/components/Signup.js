@@ -1,14 +1,14 @@
-import { useState } from "react";
+/* import { useState } from "react";
 import axios from "axios";
 
 function Signup() {
-  /* Declares three state variables - all with an empty string from start*/
+  /* Declares three state variables - all with an empty string from start
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const checkEmail = (users) => {
-    /* This function uses the find method to check for a matching  email address in users*/
+    /* This function uses the find method to check for a matching  email address in users
     const user = users.find((user) => user.email === email);
     if (user) return user;
   };
@@ -46,7 +46,7 @@ function Signup() {
   };
 
   return (
-    /* standard sign up form */
+    /* standard sign up form 
     <div className="form-container">
       <h3> Sign Up!</h3>      
       <form id="form" className="form" onSubmit={handleSubmit}>
@@ -57,7 +57,7 @@ function Signup() {
             name="name"
             value={name}
             id="name"
-            /* inline onChange variable to handle form input */
+            /* inline onChange variable to handle form input 
 
             onChange={(e) => setName(e.target.value)}
             placeholder="Full Name"
@@ -97,4 +97,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Signup; */
